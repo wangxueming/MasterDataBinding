@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="StepSixBinding">
+        <import type="java.util.HashMap" />
+        <import type="java.util.List" />
+        <import type="android.util.SparseArray" />
+
+        <variable name="list" type="List&lt;String>" />
+        <variable name="sparse" type="SparseArray&lt;String>"/>
+        <variable name="map" type="HashMap&lt;String, String>"/>
+        <variable name="index" type="int" />
+        <variable name="key" type="String" />
+
+        <variable name="user" type="com.sample.databindingsample.UserStep6" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[index]}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{sparse[index]}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{map["key1"]}'/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/nameFormat(user.firstNameB, user.lastName)}" />
+    </LinearLayout>
+</layout>
+

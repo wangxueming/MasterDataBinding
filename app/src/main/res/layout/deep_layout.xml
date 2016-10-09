@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="DeepLayoutBinding">
+        <import type="android.view.View" />
+        <import type="com.sample.databindingsample.User"/>
+        <import type="com.sample.databindingsample.utils.MyStringUtils" />
+        <variable name="user" type="User"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"
+            android:visibility="@{user.isAdultb ? View.VISIBLE : View.INVISIBLE}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{((User)(user.getConnectionUser)).lastName}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{(MyStringUtils.replaceSpecValus(user.lastName))}"/>
+    </LinearLayout>
+</layout>

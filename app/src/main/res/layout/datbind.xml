@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="MainViewBinding">
+        <variable name="user" type="com.sample.databindingsample.User"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/binding_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff00ff00"
+            />
+    </LinearLayout>
+</layout>

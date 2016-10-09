@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data  class="StepFiveBinding">
+        <variable name="user" type="com.sample.databindingsample.UserStep5"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstNameB}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@{user.lastName}"/>
+<!--
+        常用表达式跟Java表达式很像，以下这些是一样的：
+
+        数学 + - / * %
+        字符串连接 +
+        逻辑 && ||
+        二进制 & | ^
+        一元运算 + - ! ~
+        移位 >> >>> <<
+        比较 == > < >= <=
+        instanceof
+        分组 ()
+        null
+        Cast
+        方法调用
+        数据访问 []
+        三元运算 ?:
+        示例：
+
+        android:text="@{String.valueOf(index + 1)}"
+        android:visibility="@{age < 13 ? View.GONE : View.VISIBLE}"
+        android:transitionName='@{"image_" + id}'
+
+
+        缺少的操作：
+
+        this
+        super
+        new
+        显式泛型调用
+        演示一部分。太多了。。。。
+-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(1+1) + String.valueOf(5+8)}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(1-1)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(2*3)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(25/5)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(28%5)}"/>
+
+<!--  -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstNameB ?? user.lastName}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstNameB != null ? user.firstNameB : user.lastName}"/>
+    </LinearLayout>
+</layout>
+

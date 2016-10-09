@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data  class="StepThreeBinding">
+        <import type="android.view.View" />
+        <import type="com.sample.databindingsample.UserStep3" />
+        <import type="com.sample.databindingsample.views.View" alias="MyView" />
+        <variable name="user" type="com.sample.databindingsample.UserStep3"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{user.isAdult ? MyView.MYVISIBLE : View.INVISIBLE}"
+            android:text="@{user.firstNameB}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@{user.lastName}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{((UserStep3)(user.getInnerUser)).firstNameB}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@{((UserStep3)(user.getInnerUser)).lastName}"/>
+    </LinearLayout>
+</layout>
+

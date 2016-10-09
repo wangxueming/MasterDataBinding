@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data  class="StepTwoBinding">
+        <variable name="user" type="com.sample.databindingsample.UserStep1"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/step2_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff00ff00"
+            />
+    </LinearLayout>
+</layout>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto" >
+    <!-- xmlns:bind="http://schemas.android.com/apk/res-auto" 这个需要额外添加 -->
+    <data  class="StepFourBinding">
+        <variable name="user" type="com.sample.databindingsample.UserStep4"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/activity_step4_inner_1"
+            bind:user="@{user}"/>
+
+        <include layout="@layout/activity_step4_inner_2"
+            bind:user="@{user}"/>
+
+    </LinearLayout>
+</layout>
+

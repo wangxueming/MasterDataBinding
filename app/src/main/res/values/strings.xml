@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DataBindingSample</string>
+
+    <string name="deep1_first">deepFirst</string>
+    <string name="deep1_second">deepSecond</string>
+
+    <string name="nameFormat">Full Name: %1$s:%2$s</string>
+    <string name="nameFormatWithAge">Hello %1$s %2$s, %3$d ages</string>
+</resources>
